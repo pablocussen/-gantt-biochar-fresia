@@ -65,22 +65,10 @@
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, var(--green-800) 0%, var(--green-700) 100%);
+            background: var(--green-800);
             color: var(--white);
-            padding: 30px 40px;
+            padding: 25px 40px;
             position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
         }
 
         .header-content {
@@ -303,7 +291,7 @@
 
         .gantt-row .col-task {
             width: 260px;
-            padding: 7px 12px;
+            padding: 10px 12px;
             border-right: 1px solid var(--gray-100);
             display: flex;
             align-items: center;
@@ -334,7 +322,7 @@
 
         .gantt-row .month-cell {
             flex: 1;
-            height: 30px;
+            height: 38px;
             position: relative;
             border-right: 1px solid var(--gray-100);
         }
@@ -346,24 +334,24 @@
         /* Bars */
         .bar {
             position: absolute;
-            height: 12px;
+            height: 20px;
             top: 9px;
-            border-radius: 3px;
-            min-width: 6px;
-            box-shadow: var(--shadow-sm);
+            border-radius: 4px;
+            min-width: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
         }
 
-        .bar-gestion { background: linear-gradient(90deg, #5C6BC0, #7986CB); }
-        .bar-civil { background: linear-gradient(90deg, #FF7043, #FF8A65); }
-        .bar-equip { background: linear-gradient(90deg, #26A69A, #4DB6AC); }
-        .bar-liquidos { background: linear-gradient(90deg, #5C6BC0, #7986CB); }
-        .bar-instr { background: linear-gradient(90deg, #EC407A, #F06292); }
-        .bar-tech { background: linear-gradient(90deg, #7E57C2, #9575CD); }
-        .bar-agua { background: linear-gradient(90deg, #29B6F6, #4FC3F7); }
-        .bar-elec { background: linear-gradient(90deg, #FFCA28, #FFD54F); }
-        .bar-transp { background: linear-gradient(90deg, #8D6E63, #A1887F); }
-        .bar-oper { background: linear-gradient(90deg, #66BB6A, #81C784); }
-        .bar-hito { background: linear-gradient(90deg, #FF5722, #FF7043); height: 14px; top: 8px; border-radius: 4px; }
+        .bar-gestion { background: #6574C4; }
+        .bar-civil { background: #FF7556; }
+        .bar-equip { background: #35B0A8; }
+        .bar-liquidos { background: #6574C4; }
+        .bar-instr { background: #F25F8E; }
+        .bar-tech { background: #8865C9; }
+        .bar-agua { background: #3EBEF5; }
+        .bar-elec { background: #FFCE3B; }
+        .bar-transp { background: #967B73; }
+        .bar-oper { background: #72C176; }
+        .bar-hito { background: #FF6A3D; height: 22px; top: 8px; border-radius: 5px; }
 
         /* Milestones Section */
         .milestones-section {
