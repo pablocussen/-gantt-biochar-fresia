@@ -3,41 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta Gantt | Fábrica Biochar Fresia</title>
-    <meta name="description" content="Planificación de obras Fábrica Biochar Fresia - Noviembre 2025 a Marzo 2026">
-    <!-- Usando fuentes del sistema para compatibilidad -->
+    <title>Carta Gantt - Proyecto Biochar Fresia</title>
     <style>
-        :root {
-            --green-900: #1a3d1f;
-            --green-800: #1B5E20;
-            --green-700: #2E7D32;
-            --green-600: #388E3C;
-            --green-100: #E8F5E9;
-            --green-50: #f1f8f2;
-            --gray-900: #1a1a1a;
-            --gray-700: #424242;
-            --gray-600: #555;
-            --gray-500: #757575;
-            --gray-400: #9e9e9e;
-            --gray-200: #e0e0e0;
-            --gray-100: #f5f5f5;
-            --gray-50: #fafafa;
-            --white: #ffffff;
-            --orange-600: #E65100;
-            --orange-100: #fff3e0;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-        }
-
-        @page {
-            size: A4 landscape;
-            margin: 12mm;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -45,1282 +12,538 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--green-50) 100%);
-            color: var(--gray-700);
-            font-size: 12px;
-            line-height: 1.5;
-            min-height: 100vh;
-            padding: 30px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1600px;
             margin: 0 auto;
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
-        /* Header */
         .header {
-            background: var(--green-800);
-            color: var(--white);
-            padding: 25px 40px;
-            position: relative;
+            padding: 30px;
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
         }
 
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .logo-area h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 4px;
-        }
-
-        .logo-area p {
+        .header p {
             font-size: 14px;
             opacity: 0.9;
-            font-weight: 400;
         }
 
-        .header-badge {
-            background: rgba(255,255,255,0.15);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 500;
-            backdrop-filter: blur(10px);
+        .budget-info {
+            display: flex;
+            gap: 30px;
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
         }
 
-        /* Summary Cards */
-        .summary-section {
-            padding: 25px 40px;
-            background: var(--gray-50);
-            border-bottom: 1px solid var(--gray-200);
+        .budget-item {
+            display: flex;
+            flex-direction: column;
         }
 
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-        }
-
-        .summary-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-md);
-            padding: 16px 20px;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .summary-card:hover {
-            border-color: var(--green-600);
-            box-shadow: var(--shadow-md);
-        }
-
-        .summary-card .label {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--green-700);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .summary-card .value {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--gray-900);
+        .budget-label {
+            font-size: 12px;
+            color: #666;
             margin-bottom: 4px;
         }
 
-        .summary-card .sub {
-            font-size: 11px;
-            color: var(--gray-500);
-        }
-
-        .summary-card.total {
-            background: var(--green-700);
-            border-color: var(--green-700);
-        }
-
-        .summary-card.total .label,
-        .summary-card.total .sub {
-            color: rgba(255,255,255,0.85);
-        }
-
-        .summary-card.total .value {
-            color: var(--white);
-        }
-
-        /* Gantt Section */
-        .gantt-section {
-            padding: 25px 40px;
-        }
-
-        .section-title {
-            font-size: 14px;
+        .budget-value {
+            font-size: 18px;
             font-weight: 600;
-            color: var(--green-800);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 18px;
-            background: var(--green-600);
-            border-radius: 2px;
+            color: #2d5016;
         }
 
         .gantt-wrapper {
-            border: 1px solid var(--gray-200);
-            border-radius: var(--radius-md);
-            overflow: hidden;
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        .gantt-container {
+            min-width: 1400px;
         }
 
         .gantt-header {
-            background: var(--green-700);
-            color: var(--white);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            margin-bottom: 2px;
         }
 
-        .gantt-header-months {
-            display: flex;
+        .gantt-tasks-header {
+            background: #2d5016;
+            color: white;
+            padding: 12px 15px;
             font-weight: 600;
-            font-size: 11px;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .gantt-header-weeks {
+            font-size: 13px;
             display: flex;
-            font-weight: 500;
-            font-size: 9px;
+            align-items: center;
         }
 
-        .gantt-header .col-task {
-            width: 260px;
-            padding: 10px 12px;
-            border-right: 1px solid rgba(255,255,255,0.15);
+        .gantt-timeline-header {
+            display: grid;
         }
 
-        .gantt-header-weeks .col-task {
-            padding: 6px 12px;
+        .months-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border-bottom: 1px solid #d0d0d0;
         }
 
-        .gantt-header .col-timeline {
-            flex: 1;
-            display: flex;
-        }
-
-        .gantt-header .month-group {
-            flex: 1;
+        .month-cell {
+            background: #2d5016;
+            color: white;
+            padding: 10px;
             text-align: center;
-            padding: 8px 8px;
-            border-right: 1px solid rgba(255,255,255,0.15);
-            font-size: 10px;
-            letter-spacing: 0.3px;
+            font-weight: 600;
+            font-size: 13px;
+            border-right: 1px solid rgba(255,255,255,0.2);
         }
 
-        .gantt-header .month-group:last-child {
+        .month-cell:last-child {
             border-right: none;
+        }
+
+        .weeks-row {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            background: #f0f0f0;
         }
 
         .week-cell {
-            flex: 1;
+            padding: 8px 4px;
             text-align: center;
-            padding: 6px 4px;
-            border-right: 1px solid rgba(255,255,255,0.1);
-            white-space: nowrap;
-            font-size: 8px;
+            font-size: 11px;
+            border-right: 1px solid #d0d0d0;
+            color: #555;
         }
 
         .week-cell:last-child {
-            border-right: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .gantt-row {
-            display: flex;
-            border-bottom: 1px solid var(--gray-100);
-            transition: background 0.15s ease;
-        }
-
-        .gantt-row:last-child {
-            border-bottom: none;
-        }
-
-        .gantt-row:hover {
-            background: var(--green-50);
-        }
-
-        .gantt-row.group-header {
-            background: var(--gray-100);
-        }
-
-        .gantt-row.group-header .col-task {
-            font-weight: 600;
-            color: var(--green-800);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-        }
-
-        .gantt-row.milestone {
-            background: var(--orange-100);
-        }
-
-        .gantt-row.milestone:hover {
-            background: #ffe8cc;
-        }
-
-        .gantt-row .col-task {
-            width: 260px;
-            padding: 10px 12px;
-            border-right: 1px solid var(--gray-100);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .task-id {
-            font-size: 9px;
-            color: var(--gray-400);
-            min-width: 30px;
-            font-weight: 500;
-        }
-
-        .task-name {
-            font-size: 11px;
-            color: var(--gray-700);
-        }
-
-        .gantt-row.milestone .task-name {
-            font-weight: 600;
-            color: var(--orange-600);
-        }
-
-        .gantt-row .col-timeline {
-            flex: 1;
-            display: flex;
-            position: relative;
-        }
-
-        .gantt-row .month-cell {
-            flex: 1;
-            height: 38px;
-            border-right: 1px solid var(--gray-100);
-        }
-
-        .gantt-row .month-cell:last-child {
             border-right: none;
         }
 
-        /* Bars */
-        .bar {
-            position: absolute;
-            height: 20px;
-            top: 9px;
-            border-radius: 4px;
-            min-width: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-        }
-
-        .bar-gestion { background: #6574C4; }
-        .bar-civil { background: #FF7556; }
-        .bar-equip { background: #35B0A8; }
-        .bar-liquidos { background: #6574C4; }
-        .bar-instr { background: #F25F8E; }
-        .bar-tech { background: #8865C9; }
-        .bar-agua { background: #3EBEF5; }
-        .bar-elec { background: #FFCE3B; }
-        .bar-transp { background: #967B73; }
-        .bar-oper { background: #72C176; }
-        .bar-hito { background: #FF6A3D; height: 22px; top: 8px; border-radius: 5px; }
-
-        /* Milestones Section */
-        .milestones-section {
-            padding: 25px 40px;
-            background: var(--gray-50);
-            border-top: 1px solid var(--gray-200);
-        }
-
-        .milestones-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .milestone-card {
-            background: var(--white);
-            border-left: 4px solid var(--orange-600);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 16px 20px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .milestone-card .date {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--orange-600);
-            margin-bottom: 4px;
-        }
-
-        .milestone-card .name {
-            font-size: 13px;
+        .week-number {
+            display: block;
             font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 4px;
+            color: #2d5016;
         }
 
-        .milestone-card .desc {
-            font-size: 11px;
-            color: var(--gray-500);
+        .week-dates {
+            display: block;
+            font-size: 10px;
+            color: #888;
+            margin-top: 2px;
         }
 
-        /* Legend */
-        .legend-section {
-            padding: 20px 40px;
-            border-top: 1px solid var(--gray-200);
+        .gantt-body {
+            display: grid;
+            grid-template-columns: 280px 1fr;
         }
 
-        .legend-grid {
+        .tasks-column {
+            background: #fafafa;
+        }
+
+        .category-header {
+            background: #e8f5e9;
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: 12px;
+            color: #2d5016;
+            border-top: 2px solid #c8e6c9;
+            border-bottom: 1px solid #c8e6c9;
+        }
+
+        .task-row {
+            padding: 12px 15px;
+            font-size: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            background: white;
+        }
+
+        .task-code {
+            color: #888;
+            margin-right: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-column {
+            background: white;
+        }
+
+        .timeline-row {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            border-bottom: 1px solid #e0e0e0;
+            min-height: 42px;
+            position: relative;
+        }
+
+        .category-timeline {
+            background: #e8f5e9;
+            border-top: 2px solid #c8e6c9;
+            border-bottom: 1px solid #c8e6c9;
+        }
+
+        .task-bar {
+            position: absolute;
+            height: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .task-bar:hover {
+            transform: translateY(-50%) scale(1.02);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .bar-gestion { background: #5c6bc0; }
+        .bar-obras { background: #f4511e; }
+        .bar-equipamiento { background: #26a69a; }
+        .bar-liquidos { background: #039be5; }
+        .bar-agua { background: #7e57c2; }
+        .bar-techumbre { background: #8d6e63; }
+        .bar-instalacion { background: #ec407a; }
+        .bar-operacion { background: #66bb6a; }
+
+        .milestone {
+            width: 12px;
+            height: 12px;
+            background: #ffd700;
+            border: 2px solid #f57c00;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .milestone:hover {
+            transform: translateY(-50%) scale(1.3);
+        }
+
+        .legend {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .legend h3 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #2d5016;
+        }
+
+        .legend-items {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 15px;
         }
 
         .legend-item {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 10px;
-            color: var(--gray-600);
+            gap: 8px;
+            font-size: 12px;
         }
 
         .legend-color {
-            width: 16px;
-            height: 8px;
+            width: 24px;
+            height: 12px;
             border-radius: 2px;
         }
 
-        /* Footer */
-        .footer {
-            padding: 20px 40px;
-            background: var(--green-900);
-            color: rgba(255,255,255,0.8);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 11px;
-        }
-
-        .footer a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Print styles */
         @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .container {
-                box-shadow: none;
-                border-radius: 0;
-            }
-            .header {
-                padding: 20px 30px;
-            }
-            .summary-section,
-            .gantt-section,
-            .milestones-section,
-            .legend-section {
-                padding: 15px 30px;
-            }
-        }
-
-        /* Download buttons */
-        .download-section {
-            padding: 20px 40px;
-            background: var(--green-50);
-            border-top: 1px solid var(--gray-200);
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: var(--radius-md);
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: var(--green-700);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: var(--green-800);
-        }
-
-        .btn-secondary {
-            background: var(--white);
-            color: var(--gray-700);
-            border: 1px solid var(--gray-200);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--green-600);
-            color: var(--green-700);
-        }
-
-        @media print {
-            .download-section {
-                display: none;
-            }
+            body { padding: 0; }
+            .container { box-shadow: none; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <div class="header-top">
-                    <div class="logo-area">
-                        <h1>Carta Gantt</h1>
-                        <p>Fábrica Biochar Fresia • Planificación de Obras</p>
-                    </div>
-                    <div class="header-badge">Dic 2025 → Abr 2026</div>
-                </div>
-            </div>
-        </header>
+        <div class="header">
+            <h1>Carta Gantt - Ampliación Proyecto Biochar Fresia</h1>
+            <p>Fase 2: Instalación Reactores 2 y 3</p>
+        </div>
 
-        <section class="summary-section">
-            <div class="summary-grid">
-                <div class="summary-card">
-                    <div class="label">Diciembre 2025</div>
-                    <div class="value">$14.525.923</div>
-                    <div class="sub">16% del presupuesto (2 sem)</div>
-                </div>
-                <div class="summary-card">
-                    <div class="label">Enero 2026</div>
-                    <div class="value">$38.039.403</div>
-                    <div class="sub">43% del presupuesto</div>
-                </div>
-                <div class="summary-card">
-                    <div class="label">Febrero 2026</div>
-                    <div class="value">$16.696.259</div>
-                    <div class="sub">19% del presupuesto</div>
-                </div>
-                <div class="summary-card">
-                    <div class="label">Marzo 2026</div>
-                    <div class="value">$14.525.923</div>
-                    <div class="sub">16% del presupuesto</div>
-                </div>
-                <div class="summary-card total">
-                    <div class="label">Total c/IVA</div>
-                    <div class="value">$89.118.708</div>
-                    <div class="sub">Neto: $74.889.670</div>
-                </div>
+        <div class="budget-info">
+            <div class="budget-item">
+                <span class="budget-label">Presupuesto Total</span>
+                <span class="budget-value">$74.889.670</span>
             </div>
-        </section>
+            <div class="budget-item">
+                <span class="budget-label">Período</span>
+                <span class="budget-value">Dic 2025 - Abr 2026</span>
+            </div>
+            <div class="budget-item">
+                <span class="budget-label">Duración</span>
+                <span class="budget-value">20 semanas</span>
+            </div>
+        </div>
 
-        <section class="gantt-section">
-            <h2 class="section-title">Cronograma de Actividades</h2>
-            <div class="gantt-wrapper">
+        <div class="gantt-wrapper">
+            <div class="gantt-container">
+                <!-- Header -->
                 <div class="gantt-header">
-                    <div class="gantt-header-months">
-                        <div class="col-task">Actividad</div>
-                        <div class="col-timeline">
-                            <div class="month-group">DIC 2025</div>
-                            <div class="month-group">ENE 2026</div>
-                            <div class="month-group">FEB 2026</div>
-                            <div class="month-group">MAR 2026</div>
-                            <div class="month-group">ABR 2026</div>
+                    <div class="gantt-tasks-header">Actividad</div>
+                    <div class="gantt-timeline-header">
+                        <div class="months-row">
+                            <div class="month-cell">DIC 2025</div>
+                            <div class="month-cell">ENE 2026</div>
+                            <div class="month-cell">FEB 2026</div>
+                            <div class="month-cell">MAR 2026</div>
+                            <div class="month-cell">ABR 2026</div>
                         </div>
-                    </div>
-                    <div class="gantt-header-weeks">
-                        <div class="col-task">Semana</div>
-                        <div class="col-timeline">
-                            <!-- Diciembre 2025: Solo 2 semanas laborables -->
-                            <div class="week-cell" style="background: rgba(255,255,255,0.1);" title="Esperando depósito">1-7 ⏸</div>
-                            <div class="week-cell">8-14</div>
-                            <div class="week-cell">15-21</div>
-                            <div class="week-cell" style="background: rgba(255,0,0,0.15);" title="No laborable - Fiestas">22-31 🎄</div>
-                            <!-- Enero 2026: 31 días -->
-                            <div class="week-cell">1-7</div>
-                            <div class="week-cell">8-14</div>
-                            <div class="week-cell">15-21</div>
-                            <div class="week-cell">22-31</div>
-                            <!-- Febrero 2026: 28 días -->
-                            <div class="week-cell">1-7</div>
-                            <div class="week-cell">8-14</div>
-                            <div class="week-cell">15-21</div>
-                            <div class="week-cell">22-28</div>
-                            <!-- Marzo 2026: 31 días -->
-                            <div class="week-cell">1-7</div>
-                            <div class="week-cell">8-14</div>
-                            <div class="week-cell">15-21</div>
-                            <div class="week-cell">22-31</div>
-                            <!-- Abril 2026: 30 días -->
-                            <div class="week-cell">1-7</div>
-                            <div class="week-cell">8-14</div>
-                            <div class="week-cell">15-21</div>
-                            <div class="week-cell">22-30</div>
-                        </div>
+                        <div class="weeks-row" id="weeksRow"></div>
                     </div>
                 </div>
 
-                <!-- GESTIÓN -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Gestión y Coordinación</div>
-                    <div class="col-timeline">
-                        <!-- Dic: 4 semanas -->
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene: 4 semanas -->
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb: 4 semanas -->
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar: 4 semanas -->
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr: 4 semanas -->
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">0.1</span><span class="task-name">Solicitud y recepción de fondos</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-gestion" style="left: 7.4%; width: 7.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">0.2</span><span class="task-name">Coordinación supervisión externa</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-gestion" style="left: 13.4%; width: 2%;"></div>
-                    </div>
-                </div>
-
-                <!-- OBRAS CIVILES -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Obras Civiles</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">2.1</span><span class="task-name">Radier Reactor 2 - materiales</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-civil" style="left: 15.4%; width: 1.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">2.2</span><span class="task-name">Radier Reactor 2 - construcción</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-civil" style="left: 16.8%; width: 13.2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">2.3</span><span class="task-name">Radier adicional (3º) - materiales</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-civil" style="left: 15.4%; width: 1.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">2.4</span><span class="task-name">Radier adicional (3º) - construcción</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-civil" style="left: 16.8%; width: 13.2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">2.5</span><span class="task-name">Inspección radiers</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-civil" style="left: 30%; width: 2%;"></div>
-                    </div>
-                </div>
-
-                <!-- EQUIPAMIENTO -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Equipamiento de Manejo</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">3.1</span><span class="task-name">Viga H 15m - fabricación</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-equip" style="left: 20%; width: 10.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">3.2</span><span class="task-name">Apoyos y columnas estructurales</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-equip" style="left: 20%; width: 10.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">3.3</span><span class="task-name">Soldadura y montaje estructural</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-equip" style="left: 30.4%; width: 5.2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">3.4</span><span class="task-name">Instalación Tecle LIFTWORKS</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-equip" style="left: 35.6%; width: 2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">3.5</span><span class="task-name">Pruebas de carga y certificación</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-equip" style="left: 37.6%; width: 2.4%;"></div>
-                    </div>
-                </div>
-
-                <!-- LÍQUIDOS -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Sistema Manejo de Líquidos</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">4.1</span><span class="task-name">Excavación para piscina HDPE</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-liquidos" style="left: 20%; width: 2.6%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">4.2</span><span class="task-name">Instalación piscina HDPE 100m²</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-liquidos" style="left: 22.6%; width: 5.2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">4.3</span><span class="task-name">Sistema drenaje con bolones</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-liquidos" style="left: 27.8%; width: 3.8%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">4.4</span><span class="task-name">Cámara de registro + tubos</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-liquidos" style="left: 24%; width: 3.8%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">4.5</span><span class="task-name">Pruebas de hermeticidad</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-liquidos" style="left: 31.6%; width: 2%;"></div>
-                    </div>
-                </div>
-
-                <!-- TECHUMBRE -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Techumbre y Estructura</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">6.1</span><span class="task-name">Estructura metálica - fabricación</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-tech" style="left: 20%; width: 13.6%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">6.2</span><span class="task-name">Montaje estructura techumbre</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-tech" style="left: 33.6%; width: 7%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">6.3</span><span class="task-name">Cubierta de techumbre</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-tech" style="left: 40.6%; width: 8.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">6.4</span><span class="task-name">Sistema eléctrico techumbre</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-tech" style="left: 49%; width: 5.2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">6.5</span><span class="task-name">Iluminación techumbre</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-tech" style="left: 54.2%; width: 5.8%;"></div>
-                    </div>
-                </div>
-
-                <!-- AGUA -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Sistema de Agua</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">7.1</span><span class="task-name">Motor periférico 1HP</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-agua" style="left: 27%; width: 2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">7.3</span><span class="task-name">Canalización a biochar (200m)</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-agua" style="left: 20%; width: 7%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">7.4</span><span class="task-name">Estanques 1000L + estructuras</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-agua" style="left: 22%; width: 4.6%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">7.5</span><span class="task-name">Pruebas de presión sistema</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-agua" style="left: 29%; width: 2.6%;"></div>
-                    </div>
-                </div>
-
-                <!-- ELÉCTRICO -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Instalaciones Eléctricas</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">8.1</span><span class="task-name">Extensión eléctrica 20m</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-elec" style="left: 20%; width: 3.8%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">8.2</span><span class="task-name">Alimentación tecle/carro</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-elec" style="left: 23.8%; width: 3.8%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">8.3</span><span class="task-name">Tablero eléctrico local</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-elec" style="left: 23.8%; width: 3.8%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">8.4</span><span class="task-name">Instalación completa</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-elec" style="left: 27.6%; width: 20.2%;"></div>
-                    </div>
-                </div>
-
-                <!-- TRANSPORTE -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Transporte de Reactores</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">1.1</span><span class="task-name">Transporte Reactores 2 y 3</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-transp" style="left: 78.6%; width: 1.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">1.2</span><span class="task-name">Descarga con retroexcavadora</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-transp" style="left: 78.6%; width: 1.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">1.3</span><span class="task-name">Instalación básica Reactor 2</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-transp" style="left: 78.6%; width: 1.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">1.4</span><span class="task-name">Instalación básica Reactor 3</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-transp" style="left: 80.4%; width: 1.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">1.5</span><span class="task-name">Conexiones finales R2+R3</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-transp" style="left: 81.8%; width: 1.4%;"></div>
-                    </div>
-                </div>
-
-                <!-- OPERACIÓN -->
-                <div class="gantt-row group-header">
-                    <div class="col-task">Operación y Puesta en Marcha</div>
-                    <div class="col-timeline">
-                        <!-- Dic --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Ene --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Feb --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Mar --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <!-- Abr --><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">9.3a</span><span class="task-name">Ciclo prueba R1 - Marcha blanca</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-oper" style="left: 10.6%; width: 9.4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">9.4a</span><span class="task-name">Capacitación inicial equipo</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-oper" style="left: 20%; width: 2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row milestone">
-                    <div class="col-task"><span class="task-id">9.5a</span><span class="task-name">▶ INICIO MARCHA BLANCA R1</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-hito" style="left: 22%; width: 1%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">9.1</span><span class="task-name">Pruebas integradas de sistemas</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-oper" style="left: 54.2%; width: 5.8%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">9.2</span><span class="task-name">Ajustes finales infraestructura</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-oper" style="left: 60%; width: 5%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row milestone">
-                    <div class="col-task"><span class="task-id">9.5b</span><span class="task-name">▶ INICIO OPERACIÓN FORMAL R1</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-hito" style="left: 65%; width: 1%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">9.3b</span><span class="task-name">Ciclo de prueba R2+R3</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-oper" style="left: 83.2%; width: 4.2%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row">
-                    <div class="col-task"><span class="task-id">9.4b</span><span class="task-name">Capacitación equipo completo</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-oper" style="left: 87.4%; width: 4%;"></div>
-                    </div>
-                </div>
-                <div class="gantt-row milestone">
-                    <div class="col-task"><span class="task-id">9.6</span><span class="task-name">▶ OPERACIÓN 24/7 COMPLETA</span></div>
-                    <div class="col-timeline">
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div><div class="month-cell"></div>
-                        <div class="bar bar-hito" style="left: 91.4%; width: 1%;"></div>
-                    </div>
+                <!-- Body -->
+                <div class="gantt-body">
+                    <div class="tasks-column" id="tasksColumn"></div>
+                    <div class="timeline-column" id="timelineColumn"></div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="legend-section">
-            <div class="legend-grid">
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #5C6BC0, #7986CB);"></div>Gestión</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #FF7043, #FF8A65);"></div>Obras Civiles</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #26A69A, #4DB6AC);"></div>Equipamiento</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #5C6BC0, #7986CB);"></div>Líquidos</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #7E57C2, #9575CD);"></div>Techumbre</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #29B6F6, #4FC3F7);"></div>Agua</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #FFCA28, #FFD54F);"></div>Eléctrico</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #8D6E63, #A1887F);"></div>Transporte</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #66BB6A, #81C784);"></div>Operación</div>
-                <div class="legend-item"><div class="legend-color" style="background: linear-gradient(90deg, #FF5722, #FF7043);"></div>Hito</div>
+        <div class="legend">
+            <h3>Categorías</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color bar-gestion"></div>
+                    <span>Gestión y Coordinación</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color bar-obras"></div>
+                    <span>Obras Civiles</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color bar-equipamiento"></div>
+                    <span>Equipamiento de Manejo</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color bar-liquidos"></div>
+                    <span>Sistema Manejo de Líquidos</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color bar-agua"></div>
+                    <span>Sistema Agua Lavado</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color bar-techumbre"></div>
+                    <span>Techumbre Estructural</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color bar-instalacion"></div>
+                    <span>Instalación Reactores</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color bar-operacion"></div>
+                    <span>Puesta en Marcha</span>
+                </div>
             </div>
-        </section>
-
-        <section class="milestones-section">
-            <h2 class="section-title">Hitos Principales</h2>
-            <div class="milestones-grid">
-                <div class="milestone-card">
-                    <div class="date">15 Enero 2026</div>
-                    <div class="name">Inicio Marcha Blanca R1</div>
-                    <div class="desc">Reactor 1 operando en modo prueba</div>
-                </div>
-                <div class="milestone-card">
-                    <div class="date">24 Febrero 2026</div>
-                    <div class="name">Inicio Operación Formal R1</div>
-                    <div class="desc">Reactor 1 operando establemente</div>
-                </div>
-                <div class="milestone-card">
-                    <div class="date">24 Marzo 2026</div>
-                    <div class="name">Operación 24/7 Completa</div>
-                    <div class="desc">R1 + R2 + R3 funcionando</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="download-section">
-            <a href="carta_gantt_fresia.docx" class="btn btn-primary" download>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-                Descargar Word
-            </a>
-            <a href="carta_gantt_fresia.pdf" class="btn btn-secondary" download>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
-                Descargar PDF
-            </a>
-        </section>
-
-        <footer class="footer">
-            <span>Preparado: Noviembre 2025</span>
-            <span>Revisión: Francisco Acuña, Victoria Cussen</span>
-            <a href="https://cussen.cl" target="_blank">cussen.cl</a>
-        </footer>
+        </div>
     </div>
 
     <script>
-        // Mejorar el Gantt con información de semanas y días
-        function setupGanttWeeks() {
-            // Agregar tooltips con información de día de la semana
-            const weekCells = document.querySelectorAll('.week-cell');
-            const months = [
-                { name: 'Diciembre 2025', days: 31, start: new Date(2025, 11, 1) }, // Dic = 11 (0-indexed)
-                { name: 'Enero 2026', days: 31, start: new Date(2026, 0, 1) },
-                { name: 'Febrero 2026', days: 28, start: new Date(2026, 1, 1) },
-                { name: 'Marzo 2026', days: 31, start: new Date(2026, 2, 1) },
-                { name: 'Abril 2026', days: 30, start: new Date(2026, 3, 1) }
-            ];
+        // Configuración de fechas
+        const startDate = new Date(2025, 11, 1); // Diciembre 1, 2025
+        const totalWeeks = 20;
 
-            const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+        // Generar semanas
+        function generateWeeks() {
+            const weeksRow = document.getElementById('weeksRow');
+            let currentDate = new Date(startDate);
 
-            let cellIndex = 0;
-            months.forEach(month => {
-                const weeks = [
-                    { start: 1, end: 7 },
-                    { start: 8, end: 14 },
-                    { start: 15, end: 21 },
-                    { start: 22, end: month.days }
-                ];
+            for (let i = 0; i < totalWeeks; i++) {
+                const weekCell = document.createElement('div');
+                weekCell.className = 'week-cell';
+                
+                const weekStart = new Date(currentDate);
+                const weekEnd = new Date(currentDate);
+                weekEnd.setDate(weekEnd.getDate() + 6);
 
-                weeks.forEach(week => {
-                    const cell = weekCells[cellIndex];
-                    if (cell) {
-                        // Saltar las celdas con emojis (ya tienen contenido personalizado)
-                        if (!cell.textContent.includes('⏸') && !cell.textContent.includes('🎄')) {
-                            const startDate = new Date(month.start);
-                            startDate.setDate(week.start);
-                            const endDate = new Date(month.start);
-                            endDate.setDate(week.end);
+                const weekNumber = document.createElement('span');
+                weekNumber.className = 'week-number';
+                weekNumber.textContent = `S${i + 1}`;
 
-                            const startDay = dayNames[startDate.getDay()];
-                            const endDay = dayNames[endDate.getDay()];
+                const weekDates = document.createElement('span');
+                weekDates.className = 'week-dates';
+                weekDates.textContent = `${weekStart.getDate()}/${weekStart.getMonth() + 1}`;
 
-                            cell.title = `${week.start}-${week.end}: ${startDay} a ${endDay}`;
-                            cell.style.cursor = 'help';
+                weekCell.appendChild(weekNumber);
+                weekCell.appendChild(weekDates);
+                weeksRow.appendChild(weekCell);
 
-                            // Agregar el día de inicio debajo del rango
-                            cell.innerHTML = `${week.start}-${week.end}<br><span style="font-size: 7px; opacity: 0.8;">${startDay}</span>`;
-                        }
+                currentDate.setDate(currentDate.getDate() + 7);
+            }
+        }
+
+        // Datos de tareas
+        const taskData = [
+            {
+                category: 'GESTIÓN Y COORDINACIÓN',
+                categoryClass: 'bar-gestion',
+                tasks: [
+                    { code: '0.1', name: 'Solicitud y recepción de fondos', start: 0, duration: 1 },
+                    { code: '0.2', name: 'Coordinación supervisión externa', start: 0, duration: 2 }
+                ]
+            },
+            {
+                category: 'OBRAS CIVILES',
+                categoryClass: 'bar-obras',
+                tasks: [
+                    { code: '2.1', name: 'Radier Reactor 2 - materiales', start: 2, duration: 1 },
+                    { code: '2.2', name: 'Radier Reactor 2 - construcción', start: 3, duration: 2 },
+                    { code: '2.3', name: 'Radier adicional (3º) - materiales', start: 2, duration: 1 },
+                    { code: '2.4', name: 'Radier adicional (3º) - construcción', start: 3, duration: 2 },
+                    { code: '2.5', name: 'Inspección radiers', start: 5, duration: 0.5 }
+                ]
+            },
+            {
+                category: 'EQUIPAMIENTO DE MANEJO',
+                categoryClass: 'bar-equipamiento',
+                tasks: [
+                    { code: '3.1', name: 'Viga H 15m - fabricación', start: 5, duration: 2 },
+                    { code: '3.2', name: 'Apoyos y columnas estructurales', start: 5, duration: 2 },
+                    { code: '3.3', name: 'Soldadura y montaje estructural', start: 7, duration: 1 },
+                    { code: '3.4', name: 'Instalación Tecle LIFTWORKS', start: 8, duration: 0.5 },
+                    { code: '3.5', name: 'Pruebas de carga y certificación', start: 8.5, duration: 0.5 }
+                ]
+            },
+            {
+                category: 'SISTEMA MANEJO DE LÍQUIDOS',
+                categoryClass: 'bar-liquidos',
+                tasks: [
+                    { code: '4.1', name: 'Excavación para piscina HDPE', start: 2, duration: 1 },
+                    { code: '4.2', name: 'Instalación piscina HDPE 100m²', start: 3, duration: 1 },
+                    { code: '4.3', name: 'Sistema drenaje con bolones', start: 4, duration: 1 },
+                    { code: '4.4', name: 'Cámara de registro + tubos', start: 5, duration: 1 },
+                    { code: '4.5', name: 'Pruebas de hermeticidad', start: 6, duration: 0.5 }
+                ]
+            },
+            {
+                category: 'SISTEMA AGUA LAVADO',
+                categoryClass: 'bar-agua',
+                tasks: [
+                    { code: '7.3', name: 'Canalización a biochar (200m)', start: 4, duration: 2 },
+                    { code: '7.4', name: 'Estanques 1000L + estructuras', start: 6, duration: 1 },
+                    { code: '7.5', name: 'Pruebas de presión sistema', start: 7, duration: 0.5 }
+                ]
+            },
+            {
+                category: 'TECHUMBRE ESTRUCTURAL',
+                categoryClass: 'bar-techumbre',
+                tasks: [
+                    { code: '6.1', name: 'Estructura metálica - fabricación', start: 2, duration: 3 },
+                    { code: '6.2', name: 'Montaje estructura techumbre', start: 5, duration: 2 },
+                    { code: '6.4', name: 'Sistema eléctrico techumbre', start: 7, duration: 1 }
+                ]
+            },
+            {
+                category: 'INSTALACIÓN REACTORES',
+                categoryClass: 'bar-instalacion',
+                tasks: [
+                    { code: '1.1', name: 'Transporte Reactores 2 y 3 (90 días post-pago)', start: 15, duration: 0.5 },
+                    { code: '1.2', name: 'Descarga con retroexcavadora', start: 15.5, duration: 0.5 },
+                    { code: '1.3', name: 'Instalación básica Reactor 2', start: 16, duration: 1 },
+                    { code: '1.4', name: 'Instalación básica Reactor 3', start: 16, duration: 1 },
+                    { code: '1.5', name: 'Conexiones finales R2+R3', start: 17, duration: 1 }
+                ]
+            },
+            {
+                category: 'PUESTA EN MARCHA',
+                categoryClass: 'bar-operacion',
+                tasks: [
+                    { code: '9.1', name: 'Pruebas integradas de sistemas', start: 8, duration: 1 },
+                    { code: '9.2', name: 'Ajustes finales infraestructura', start: 9, duration: 1 },
+                    { code: '9.3a', name: 'Ciclo prueba R1 - Marcha blanca', start: 10, duration: 1 },
+                    { code: '9.4a', name: 'Capacitación inicial equipo', start: 11, duration: 0.5 },
+                    { code: '9.5a', name: '▶ INICIO MARCHA BLANCA R1', start: 11.5, duration: 0, milestone: true },
+                    { code: '9.5b', name: '▶ INICIO OPERACIÓN FORMAL R1', start: 12, duration: 0, milestone: true },
+                    { code: '9.3b', name: 'Ciclo de prueba R2+R3', start: 18, duration: 1 },
+                    { code: '9.4b', name: 'Capacitación equipo completo', start: 19, duration: 0.5 },
+                    { code: '9.6', name: '▶ OPERACIÓN 24/7 COMPLETA', start: 19.5, duration: 0, milestone: true }
+                ]
+            }
+        ];
+
+        // Renderizar tareas y timeline
+        function renderGantt() {
+            const tasksColumn = document.getElementById('tasksColumn');
+            const timelineColumn = document.getElementById('timelineColumn');
+
+            taskData.forEach(category => {
+                // Header de categoría
+                const catHeader = document.createElement('div');
+                catHeader.className = 'category-header';
+                catHeader.textContent = category.category;
+                tasksColumn.appendChild(catHeader);
+
+                const catTimeline = document.createElement('div');
+                catTimeline.className = 'timeline-row category-timeline';
+                timelineColumn.appendChild(catTimeline);
+
+                // Tareas
+                category.tasks.forEach(task => {
+                    const taskRow = document.createElement('div');
+                    taskRow.className = 'task-row';
+                    taskRow.innerHTML = `<span class="task-code">${task.code}</span>${task.name}`;
+                    tasksColumn.appendChild(taskRow);
+
+                    const timelineRow = document.createElement('div');
+                    timelineRow.className = 'timeline-row';
+
+                    if (task.milestone) {
+                        const milestone = document.createElement('div');
+                        milestone.className = 'milestone';
+                        milestone.style.left = `${(task.start / totalWeeks) * 100}%`;
+                        milestone.title = task.name;
+                        timelineRow.appendChild(milestone);
+                    } else {
+                        const bar = document.createElement('div');
+                        bar.className = `task-bar ${category.categoryClass}`;
+                        const left = (task.start / totalWeeks) * 100;
+                        const width = (task.duration / totalWeeks) * 100;
+                        bar.style.left = `${left}%`;
+                        bar.style.width = `${width}%`;
+                        bar.title = `${task.name} (${task.duration} sem)`;
+                        timelineRow.appendChild(bar);
                     }
-                    cellIndex++;
+
+                    timelineColumn.appendChild(timelineRow);
                 });
             });
-
-            // Agregar indicador de día actual si está en el rango
-            const today = new Date();
-            if (today >= new Date(2025, 11, 1) && today <= new Date(2026, 3, 30)) {
-                highlightCurrentWeek(today);
-            }
         }
 
-        function highlightCurrentWeek(today) {
-            const monthStart = new Date(2025, 11, 1); // Dic 1, 2025
-            const daysSinceStart = Math.floor((today - monthStart) / (1000 * 60 * 60 * 24));
-            const weekIndex = Math.floor(daysSinceStart / 7);
-
-            const weekCells = document.querySelectorAll('.week-cell');
-            if (weekCells[weekIndex]) {
-                weekCells[weekIndex].style.background = 'rgba(255, 255, 255, 0.3)';
-                weekCells[weekIndex].style.fontWeight = '700';
-            }
-        }
-
-        // Ejecutar al cargar la página
-        document.addEventListener('DOMContentLoaded', setupGanttWeeks);
+        // Inicializar
+        generateWeeks();
+        renderGantt();
     </script>
 </body>
 </html>
